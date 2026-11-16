@@ -8,9 +8,9 @@
         xmlns:vm="clr-namespace:AstroHybrid.App.ViewModels"
         xmlns:models="clr-namespace:AstroHybrid.App.Models"
         mc:Ignorable="d"
-        Title="AstroHybrid" Height="620" Width="1000"
+        Title="AstroHybrid" Height="560" Width="920"
         WindowStartupLocation="CenterScreen"
-        MinHeight="360" MinWidth="780"
+        MinHeight="360" MinWidth="720"
         Style="{StaticResource MainWindowStyle}"
         Icon="/Resources/astrohybrid.ico">
 
@@ -30,7 +30,7 @@
         <!-- Sidebar -->
         <Border Grid.Column="0" Background="{StaticResource SurfaceBrush}"
                 BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,0,1,0"
-                Width="220">
+                Width="192">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -39,27 +39,27 @@
                 </Grid.RowDefinitions>
 
                 <!-- Logo -->
-                <Border Grid.Row="0" Padding="16,16,16,10" BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0" Padding="12,12,12,8" BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,0,0,1">
                     <StackPanel Orientation="Horizontal">
-                        <Border Width="40" Height="40" CornerRadius="8" Background="{StaticResource PrimaryBrush}">
-                            <TextBlock Text="★" FontSize="24" Foreground="White"
+                        <Border Width="34" Height="34" CornerRadius="8" Background="{StaticResource PrimaryBrush}">
+                            <TextBlock Text="★" FontSize="20" Foreground="White"
                                        HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
-                        <StackPanel Margin="12,0,0,0" VerticalAlignment="Center">
-                            <TextBlock Text="AstroHybrid" FontSize="16" FontWeight="Bold" Foreground="{StaticResource TextPrimaryBrush}"/>
-                            <TextBlock Text="Astro Bot PC Port" FontSize="11" Foreground="{StaticResource TextMutedBrush}"/>
+                        <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
+                            <TextBlock Text="AstroHybrid" FontSize="15" FontWeight="Bold" Foreground="{StaticResource TextPrimaryBrush}"/>
+                            <TextBlock Text="Astro Bot PC Port" FontSize="10" Foreground="{StaticResource TextMutedBrush}"/>
                         </StackPanel>
                     </StackPanel>
                 </Border>
 
                 <!-- Navigation -->
-                <StackPanel Grid.Row="1" Margin="8,16,8,0">
+                <StackPanel Grid.Row="1" Margin="6,12,6,0">
                     <RadioButton Style="{StaticResource NavButtonStyle}"
                                  IsChecked="{Binding CurrentPage, Converter={StaticResource EnumToBoolConverter}, ConverterParameter=Home}"
                                  Command="{Binding NavigateCommand}" CommandParameter="Home">
                         <RadioButton.Content>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="🏠" FontSize="16" Margin="0,0,12,0"/>
+                                <TextBlock Text="🏠" FontSize="14" Margin="0,0,10,0"/>
                                 <TextBlock Text="Home"/>
                             </StackPanel>
                         </RadioButton.Content>
@@ -68,10 +68,10 @@
                     <RadioButton Style="{StaticResource NavButtonStyle}"
                                  IsChecked="{Binding CurrentPage, Converter={StaticResource EnumToBoolConverter}, ConverterParameter=GraphicsSettings}"
                                  Command="{Binding NavigateCommand}" CommandParameter="GraphicsSettings"
-                                 Margin="0,4,0,0">
+                                 Margin="0,2,0,0">
                         <RadioButton.Content>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="🎮" FontSize="16" Margin="0,0,12,0"/>
+                                <TextBlock Text="🎮" FontSize="14" Margin="0,0,10,0"/>
                                 <TextBlock Text="Graphics"/>
                             </StackPanel>
                         </RadioButton.Content>
@@ -80,10 +80,10 @@
                     <RadioButton Style="{StaticResource NavButtonStyle}"
                                  IsChecked="{Binding CurrentPage, Converter={StaticResource EnumToBoolConverter}, ConverterParameter=ControllerSettings}"
                                  Command="{Binding NavigateCommand}" CommandParameter="ControllerSettings"
-                                 Margin="0,4,0,0">
+                                 Margin="0,2,0,0">
                         <RadioButton.Content>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="🎯" FontSize="16" Margin="0,0,12,0"/>
+                                <TextBlock Text="🎯" FontSize="14" Margin="0,0,10,0"/>
                                 <TextBlock Text="Controller"/>
                             </StackPanel>
                         </RadioButton.Content>
@@ -92,10 +92,10 @@
                     <RadioButton Style="{StaticResource NavButtonStyle}"
                                  IsChecked="{Binding CurrentPage, Converter={StaticResource EnumToBoolConverter}, ConverterParameter=AdvancedSettings}"
                                  Command="{Binding NavigateCommand}" CommandParameter="AdvancedSettings"
-                                 Margin="0,4,0,0">
+                                 Margin="0,2,0,0">
                         <RadioButton.Content>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="⚙️" FontSize="16" Margin="0,0,12,0"/>
+                                <TextBlock Text="⚙️" FontSize="14" Margin="0,0,10,0"/>
                                 <TextBlock Text="Advanced"/>
                             </StackPanel>
                         </RadioButton.Content>
@@ -104,10 +104,10 @@
                     <RadioButton Style="{StaticResource NavButtonStyle}"
                                  IsChecked="{Binding CurrentPage, Converter={StaticResource EnumToBoolConverter}, ConverterParameter=Installation}"
                                  Command="{Binding NavigateCommand}" CommandParameter="Installation"
-                                 Margin="0,4,0,0">
+                                 Margin="0,2,0,0">
                         <RadioButton.Content>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="📦" FontSize="16" Margin="0,0,12,0"/>
+                                <TextBlock Text="📦" FontSize="14" Margin="0,0,10,0"/>
                                 <TextBlock Text="Installation"/>
                             </StackPanel>
                         </RadioButton.Content>
@@ -115,13 +115,13 @@
                 </StackPanel>
 
                 <!-- Status Bar -->
-                <Border Grid.Row="2" Padding="16" BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,1,0,0">
+                <Border Grid.Row="2" Padding="12" BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,1,0,0">
                     <StackPanel>
                         <TextBlock Text="STATUS" Style="{StaticResource MutedTextStyle}" Margin="0,0,0,4"/>
                         <TextBlock Text="{Binding StatusMessage}" Style="{StaticResource BodyTextStyle}" TextWrapping="Wrap"/>
                         <ProgressBar Value="{Binding IsLoading, Converter={StaticResource BoolToProgressConverter}}"
                                      Maximum="1" IsIndeterminate="{Binding IsLoading}"
-                                     Style="{StaticResource ModernProgressBarStyle}" Height="4" Margin="0,8,0,0"
+                                     Style="{StaticResource ModernProgressBarStyle}" Height="4" Margin="0,6,0,0"
                                      Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                     </StackPanel>
                 </Border>
@@ -138,12 +138,12 @@
 
                 <!-- Page Content -->
                 <ContentControl Grid.Row="0" Content="{Binding CurrentPage, Converter={StaticResource PageTemplateSelector}}"
-                                Margin="24,24,24,0"/>
+                                Margin="20,18,20,0"/>
 
                 <!-- Update Notification Banner -->
-                <Border Grid.Row="0" VerticalAlignment="Top" Margin="24,24,24,0"
+                <Border Grid.Row="0" VerticalAlignment="Top" Margin="20,16,20,0"
                         Visibility="{Binding ShowUpdateNotification, Converter={StaticResource BooleanToVisibilityConverter}}"
-                        Background="{StaticResource PrimaryBrush}" CornerRadius="8" Padding="20"
+                        Background="{StaticResource PrimaryBrush}" CornerRadius="8" Padding="14"
                         BorderBrush="{StaticResource AccentBrush}" BorderThickness="1">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -152,32 +152,34 @@
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" Text="🔔" FontSize="24" VerticalAlignment="Center" Margin="0,0,16,0"/>
+                        <TextBlock Grid.Column="0" Text="🔔" FontSize="20" VerticalAlignment="Center" Margin="0,0,12,0"/>
                         <StackPanel Grid.Column="1" VerticalAlignment="Center">
-                            <TextBlock Text="NEW ASTROHYBRID UPDATE AVAILABLE" FontSize="14" FontWeight="Bold" Foreground="White"/>
-                            <TextBlock Text="{Binding UpdateState.LatestUpdate.Version, StringFormat='Version {0}'}" FontSize="13" Foreground="#CCFFFFFF" Margin="0,2,0,0"/>
-                            <TextBlock Text="{Binding UpdateState.LatestUpdate.ReleaseNotes}" FontSize="12" Foreground="#AAFFFFFF" TextWrapping="Wrap" MaxWidth="500" Margin="0,8,0,0"/>
+                            <TextBlock Text="NEW ASTROHYBRID UPDATE AVAILABLE" FontSize="13" FontWeight="Bold" Foreground="White"/>
+                            <TextBlock Text="{Binding UpdateState.LatestUpdate.Version, StringFormat='Version {0}'}" FontSize="12" Foreground="#CCFFFFFF" Margin="0,2,0,0"/>
+                            <TextBlock Text="{Binding UpdateState.LatestUpdate.ReleaseNotesSummary}" FontSize="12" Foreground="#AAFFFFFF"
+                                       TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" Margin="0,4,0,0"
+                                       ToolTip="{Binding UpdateState.LatestUpdate.ReleaseNotesDisplay}"/>
                         </StackPanel>
                         <Button Grid.Column="2" Content="Update Now" Command="{Binding DownloadUpdateCommand}"
-                                Style="{StaticResource PrimaryButtonStyle}" MinWidth="120" MinHeight="36"
-                                FontSize="13" FontWeight="SemiBold" Margin="16,0,8,0"
+                                Style="{StaticResource PrimaryButtonStyle}" MinWidth="96" MinHeight="34" Padding="12,5"
+                                FontSize="12" FontWeight="SemiBold" Margin="12,0,8,0"
                                 Visibility="{Binding UpdateState.IsDownloading, Converter={StaticResource InverseBooleanToVisibilityConverter}}"/>
-                        <Button Grid.Column="2" Content="Downloading..." Style="{StaticResource PrimaryButtonStyle}" MinWidth="120" MinHeight="36"
-                                FontSize="13" FontWeight="SemiBold" Margin="16,0,8,0" IsEnabled="False"
+                        <Button Grid.Column="2" Content="Downloading..." Style="{StaticResource PrimaryButtonStyle}" MinWidth="96" MinHeight="34" Padding="12,5"
+                                FontSize="12" FontWeight="SemiBold" Margin="12,0,8,0" IsEnabled="False"
                                 Visibility="{Binding UpdateState.IsDownloading, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                         <Button Grid.Column="3" Content="Ignore for Now" Command="{Binding IgnoreUpdateCommand}"
-                                Style="{StaticResource SecondaryButtonStyle}" MinWidth="110" MinHeight="36"
-                                FontSize="13" Margin="8,0,0,0"
+                                Style="{StaticResource SecondaryButtonStyle}" MinWidth="96" MinHeight="34" Padding="12,5"
+                                FontSize="12" Margin="8,0,0,0"
                                 Visibility="{Binding UpdateState.IsDownloading, Converter={StaticResource InverseBooleanToVisibilityConverter}}"/>
                         <Button Grid.Column="3" Content="Cancel" Command="{Binding DismissUpdateNotificationCommand}"
-                                Style="{StaticResource SecondaryButtonStyle}" MinWidth="80" MinHeight="36"
-                                FontSize="13" Margin="8,0,0,0"
+                                Style="{StaticResource SecondaryButtonStyle}" MinWidth="76" MinHeight="34" Padding="12,5"
+                                FontSize="12" Margin="8,0,0,0"
                                 Visibility="{Binding UpdateState.IsDownloading, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                     </Grid>
                 </Border>
 
                 <!-- Bottom Action Bar -->
-                <Border Grid.Row="1" Padding="24,16" BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,1,0,0">
+                <Border Grid.Row="1" Padding="20,10" BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,1,0,0">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -186,20 +188,20 @@
 
                         <StackPanel Grid.Column="0" Orientation="Horizontal">
                             <Button Content="Best Settings for This PC" Command="{Binding ApplyBestSettingsCommand}"
-                                    Style="{StaticResource SecondaryButtonStyle}" Margin="0,0,10,0"
+                                    Style="{StaticResource SecondaryButtonStyle}" MinHeight="38" Padding="14,6" Margin="0,0,8,0"
                                     Visibility="{Binding CurrentPage, Converter={StaticResource PageVisibilityConverter}, ConverterParameter=GraphicsSettings}"/>
                         </StackPanel>
 
                         <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
                             <!-- Update button shown when update is available and not downloading/installing -->
                             <Button Content="Update" Command="{Binding DownloadUpdateCommand}"
-                                    Style="{StaticResource PrimaryButtonStyle}" MinWidth="120" MinHeight="44"
-                                    FontSize="15" FontWeight="SemiBold" Margin="0,0,10,0"
+                                    Style="{StaticResource PrimaryButtonStyle}" MinWidth="100" MinHeight="38" Padding="16,6"
+                                    FontSize="14" FontWeight="SemiBold" Margin="0,0,8,0"
                                     Visibility="{Binding UpdateState.UpdateAvailable, Converter={StaticResource BooleanToVisibilityConverter}}"
                                     IsEnabled="{Binding UpdateState.UpdateAvailable, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                             <Button Content="Play" Command="{Binding LaunchGameCommand}"
-                                    Style="{StaticResource PrimaryButtonStyle}" MinWidth="140" MinHeight="44"
-                                    FontSize="15" FontWeight="SemiBold"
+                                    Style="{StaticResource PrimaryButtonStyle}" MinWidth="120" MinHeight="38" Padding="16,6"
+                                    FontSize="14" FontWeight="SemiBold"
                                     IsEnabled="{Binding InstallationState.IsInstalled}"/>
                         </StackPanel>
                     </Grid>

@@ -15,6 +15,12 @@ namespace AstroHybrid.App.Models
         [JsonPropertyName("releaseNotes")]
         public string ReleaseNotes { get; set; } = "";
 
+        [JsonIgnore]
+        public string ReleaseNotesDisplay => ReleaseNotes.Replace("\\r\\n", "\n").Replace("\\n", "\n").Replace("\\r", "\n");
+
+        [JsonIgnore]
+        public string ReleaseNotesSummary => ReleaseNotesDisplay.Replace("\r", " ").Replace("\n", " ").Trim();
+
         [JsonPropertyName("publishedAt")]
         public DateTime PublishedAt { get; set; }
 

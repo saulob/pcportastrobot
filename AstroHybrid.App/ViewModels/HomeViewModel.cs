@@ -26,6 +26,20 @@ namespace AstroHybrid.App.ViewModels
 
         public string GameVersion => _mainViewModel.InstallationState?.GameVersion ?? "Unknown";
 
+        private string RawGameVersion => _mainViewModel.InstallationState?.GameVersion ?? "Unknown";
+
+        private int NotTestedIndex => RawGameVersion.IndexOf("(not tested", StringComparison.OrdinalIgnoreCase);
+
+        public string GameVersionDisplay => NotTestedIndex > 0
+            ? RawGameVersion.Substring(0, NotTestedIndex).Trim()
+            : RawGameVersion;
+
+        public string GameVersionNote => NotTestedIndex > 0 ? "Not tested" : "";
+
+        public bool HasGameVersionNote => GameVersionNote.Length > 0;
+
+        public string GameVersionDetails => RawGameVersion;
+
         public string GameTitleId => _mainViewModel.InstallationState?.GameTitleId ?? "Unknown";
 
         public string CpuInfo => _mainViewModel.HardwareInfo?.CpuName ?? "Unknown";
@@ -37,7 +51,7 @@ namespace AstroHybrid.App.ViewModels
             : "Unknown";
 
         public string DisplayInfo => _mainViewModel.HardwareInfo != null
-            ? $"{_mainViewModel.HardwareInfo.ScreenWidth}x{_mainViewModel.HardwareInfo.ScreenHeight}\n{_mainViewModel.HardwareInfo.RefreshRate} Hz"
+            ? $"{_mainViewModel.HardwareInfo.ScreenWidth}x{_mainViewModel.HardwareInfo.ScreenHeight} {_mainViewModel.HardwareInfo.RefreshRate} Hz"
             : "Unknown";
 
         public string CurrentGraphicsConfig => BuildGraphicsConfigString();
