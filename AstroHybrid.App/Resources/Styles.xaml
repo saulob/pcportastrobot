@@ -46,10 +46,10 @@
     <!-- Font Sizes -->
     <sys:Double x:Key="FontSizeSmall">12</sys:Double>
     <sys:Double x:Key="FontSizeNormal">14</sys:Double>
-    <sys:Double x:Key="FontSizeMedium">16</sys:Double>
-    <sys:Double x:Key="FontSizeLarge">20</sys:Double>
+    <sys:Double x:Key="FontSizeMedium">14</sys:Double>
+    <sys:Double x:Key="FontSizeLarge">16</sys:Double>
     <sys:Double x:Key="FontSizeXLarge">28</sys:Double>
-    <sys:Double x:Key="FontSizeTitle">36</sys:Double>
+    <sys:Double x:Key="FontSizeTitle">26</sys:Double>
 
     <FontFamily x:Key="FontFamilyDefault">Segoe UI</FontFamily>
 
@@ -350,13 +350,13 @@
         <Setter Property="FontSize" Value="{StaticResource FontSizeMedium}"/>
         <Setter Property="FontWeight" Value="SemiBold"/>
         <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}"/>
-        <Setter Property="Margin" Value="0,20,0,10"/>
+        <Setter Property="Margin" Value="0,16,0,8"/>
     </Style>
 
     <Style TargetType="TextBlock" x:Key="BodyTextStyle" BasedOn="{StaticResource BaseTextBlockStyle}">
-        <Setter Property="FontSize" Value="{StaticResource FontSizeNormal}"/>
+        <Setter Property="FontSize" Value="13"/>
         <Setter Property="Foreground" Value="{StaticResource TextSecondaryBrush}"/>
-        <Setter Property="LineHeight" Value="22"/>
+        <Setter Property="LineHeight" Value="20"/>
         <Setter Property="TextWrapping" Value="Wrap"/>
     </Style>
 
@@ -366,7 +366,7 @@
     </Style>
 
     <Style TargetType="TextBlock" x:Key="ErrorTextStyle" BasedOn="{StaticResource BaseTextBlockStyle}">
-        <Setter Property="FontSize" Value="{StaticResource FontSizeNormal}"/>
+        <Setter Property="FontSize" Value="13"/>
         <Setter Property="Foreground" Value="{StaticResource ErrorBrush}"/>
     </Style>
 
@@ -382,7 +382,7 @@
         <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="CornerRadius" Value="8"/>
-        <Setter Property="Padding" Value="20"/>
+        <Setter Property="Padding" Value="18"/>
         <Setter Property="Margin" Value="0,10"/>
     </Style>
 
@@ -391,7 +391,7 @@
         <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="CornerRadius" Value="8"/>
-        <Setter Property="Padding" Value="20"/>
+        <Setter Property="Padding" Value="14"/>
     </Style>
 
     <!-- Sidebar Navigation Button -->
@@ -399,7 +399,7 @@
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="{StaticResource TextSecondaryBrush}"/>
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="Padding" Value="16,12"/>
+        <Setter Property="Padding" Value="14,10"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
         <Setter Property="Cursor" Value="Hand"/>
@@ -438,23 +438,24 @@
         <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="CornerRadius" Value="16"/>
-        <Setter Property="Padding" Value="32"/>
-        <Setter Property="MinHeight" Value="200"/>
+        <Setter Property="Padding" Value="24"/>
+        <Setter Property="MinHeight" Value="160"/>
     </Style>
 
     <!-- Hero Text Styles -->
     <Style TargetType="TextBlock" x:Key="HeroTitleStyle">
-        <Setter Property="FontSize" Value="48"/>
+        <Setter Property="FontSize" Value="31"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}"/>
-        <Setter Property="LineHeight" Value="56"/>
+        <Setter Property="LineHeight" Value="38"/>
     </Style>
 
     <Style TargetType="TextBlock" x:Key="HeroSubtitleStyle">
-        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontSize" Value="16"/>
         <Setter Property="FontWeight" Value="Medium"/>
         <Setter Property="Foreground" Value="{StaticResource TextSecondaryBrush}"/>
-        <Setter Property="LineHeight" Value="28"/>
+        <Setter Property="LineHeight" Value="22"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
     </Style>
 
     <Style TargetType="TextBlock" x:Key="HeroStatusStyle">
@@ -469,8 +470,8 @@
         <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="CornerRadius" Value="8"/>
-        <Setter Property="Padding" Value="16,12"/>
-        <Setter Property="MinWidth" Value="140"/>
+        <Setter Property="Padding" Value="12,8"/>
+        <Setter Property="MinWidth" Value="110"/>
     </Style>
 
     <Style TargetType="TextBlock" x:Key="VersionBadgeLabelStyle">
@@ -480,7 +481,7 @@
     </Style>
 
     <Style TargetType="TextBlock" x:Key="VersionBadgeValueStyle">
-        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}"/>
     </Style>
@@ -491,7 +492,7 @@
         <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="CornerRadius" Value="12"/>
-        <Setter Property="Padding" Value="20"/>
+        <Setter Property="Padding" Value="14"/>
     </Style>
 
     <Style TargetType="TextBlock" x:Key="StatLabelStyle">
@@ -558,15 +559,15 @@
         <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="CornerRadius" Value="12"/>
-        <Setter Property="Padding" Value="24"/>
-        <Setter Property="Margin" Value="0,0,0,16"/>
+        <Setter Property="Padding" Value="20"/>
+        <Setter Property="Margin" Value="0,0,0,12"/>
     </Style>
 
     <Style TargetType="TextBlock" x:Key="SettingsGroupHeaderStyle">
-        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="FontWeight" Value="SemiBold"/>
         <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}"/>
-        <Setter Property="Margin" Value="0,0,0,16"/>
+        <Setter Property="Margin" Value="0,0,0,12"/>
     </Style>
 
     <Style TargetType="TextBlock" x:Key="SettingsDescriptionStyle">

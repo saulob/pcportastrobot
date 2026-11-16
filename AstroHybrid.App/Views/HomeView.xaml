@@ -17,9 +17,9 @@
     </UserControl.Resources>
 
     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-        <StackPanel Margin="0,0,0,30">
+        <StackPanel Margin="0,0,0,24">
             <!-- Hero Section with Astro Bot Artwork -->
-            <Border Style="{StaticResource HeroCardStyle}" Margin="0,0,0,24">
+            <Border Style="{StaticResource HeroCardStyle}" Margin="0,0,0,20">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -27,12 +27,12 @@
                     </Grid.ColumnDefinitions>
 
                     <!-- Left: Game Info -->
-                    <StackPanel Grid.Column="0" VerticalAlignment="Center" Margin="0,0,40,0">
+                    <StackPanel Grid.Column="0" VerticalAlignment="Center" Margin="0,0,24,0">
                         <TextBlock Text="ASTRO BOT" Style="{StaticResource HeroTitleStyle}"/>
                         <TextBlock Text="Native PC Port • AstroHybrid" Style="{StaticResource HeroSubtitleStyle}" Margin="0,8,0,0"/>
 
                         <!-- Version Info Row -->
-                        <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                        <WrapPanel Margin="0,16,0,0">
                             <Border Style="{StaticResource VersionBadgeStyle}">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="📦" FontSize="12" VerticalAlignment="Center" Margin="0,0,6,0"/>
@@ -42,7 +42,7 @@
                                     </StackPanel>
                                 </StackPanel>
                             </Border>
-                            <Border Style="{StaticResource VersionBadgeStyle}" Margin="12,0,0,0"
+                            <Border Style="{StaticResource VersionBadgeStyle}" Margin="8,0,0,0"
                                     Visibility="{Binding UpdateState.UpdateAvailable, Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="🆕" FontSize="12" VerticalAlignment="Center" Margin="0,0,6,0"/>
@@ -52,7 +52,7 @@
                                     </StackPanel>
                                 </StackPanel>
                             </Border>
-                            <Border Style="{StaticResource VersionBadgeStyle}" Margin="12,0,0,0"
+                            <Border Style="{StaticResource VersionBadgeStyle}" Margin="8,0,0,0"
                                     Visibility="{Binding UpdateState.UpdateAvailable, Converter={StaticResource InverseBooleanToVisibilityConverter}}">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="✓" FontSize="12" VerticalAlignment="Center" Margin="0,0,6,0" Foreground="{StaticResource SuccessBrush}"/>
@@ -62,32 +62,32 @@
                                     </StackPanel>
                                 </StackPanel>
                             </Border>
-                        </StackPanel>
+                        </WrapPanel>
 
                         <!-- Status -->
-                        <TextBlock Text="{Binding GameStatus}" Style="{StaticResource HeroStatusStyle}" Margin="0,16,0,0"
+                        <TextBlock Text="{Binding GameStatus}" Style="{StaticResource HeroStatusStyle}" Margin="0,12,0,0"
                                    Foreground="{Binding GameStatus, Converter={StaticResource StatusToBrushConverter}}"/>
                     </StackPanel>
 
                     <!-- Right: Astro Bot Artwork -->
-                    <Border Grid.Column="1" Width="280" Height="280" CornerRadius="16"
+                    <Border Grid.Column="1" Width="200" Height="200" CornerRadius="16"
                             Background="{StaticResource SurfaceBrush}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1"
                             VerticalAlignment="Center" HorizontalAlignment="Right">
                         <Grid>
                             <!-- Placeholder for Astro Bot artwork - replace with actual image when available -->
                             <Border Background="{StaticResource PrimaryBrush}" CornerRadius="16" Opacity="0.15"/>
-                            <Viewbox Margin="40" Stretch="Uniform">
+                            <Viewbox Margin="28" Stretch="Uniform">
                                 <TextBlock Text="★" FontSize="120" Foreground="{StaticResource PrimaryBrush}" Opacity="0.6"/>
                             </Viewbox>
-                            <TextBlock Text="ASTRO BOT" FontSize="18" FontWeight="Bold" Foreground="{StaticResource TextMutedBrush}"
-                                       HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20"/>
+                            <TextBlock Text="ASTRO BOT" FontSize="15" FontWeight="Bold" Foreground="{StaticResource TextMutedBrush}"
+                                       HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,14"/>
                         </Grid>
                     </Border>
                 </Grid>
             </Border>
 
             <!-- Quick Stats Grid -->
-            <Grid Margin="0,0,0,24">
+            <Grid Margin="0,0,0,20">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -98,39 +98,39 @@
                 <Border Grid.Column="0" Style="{StaticResource StatCardStyle}">
                     <StackPanel>
                         <TextBlock Text="GAME VERSION" Style="{StaticResource StatLabelStyle}"/>
-                        <TextBlock Text="{Binding GameVersion}" Style="{StaticResource StatValueStyle}" FontSize="22"/>
+                        <TextBlock Text="{Binding GameVersion}" Style="{StaticResource StatValueStyle}" FontSize="18"/>
                         <TextBlock Style="{StaticResource StatDetailStyle}"><Run Text="Title ID: "/><Run Text="{Binding GameTitleId, Mode=OneWay}"/></TextBlock>
                     </StackPanel>
                 </Border>
 
-                <Border Grid.Column="1" Style="{StaticResource StatCardStyle}" Margin="12,0,0,0">
+                <Border Grid.Column="1" Style="{StaticResource StatCardStyle}" Margin="10,0,0,0">
                     <StackPanel>
                         <TextBlock Text="CPU" Style="{StaticResource StatLabelStyle}"/>
                         <TextBlock Text="{Binding CpuInfo}" Style="{StaticResource StatValueStyle}" FontSize="16" TextWrapping="Wrap"/>
                     </StackPanel>
                 </Border>
 
-                <Border Grid.Column="2" Style="{StaticResource StatCardStyle}" Margin="12,0,0,0">
+                <Border Grid.Column="2" Style="{StaticResource StatCardStyle}" Margin="10,0,0,0">
                     <StackPanel>
                         <TextBlock Text="GPU" Style="{StaticResource StatLabelStyle}"/>
                         <TextBlock Text="{Binding GpuInfo}" Style="{StaticResource StatValueStyle}" FontSize="16" TextWrapping="Wrap"/>
                     </StackPanel>
                 </Border>
 
-                <Border Grid.Column="3" Style="{StaticResource StatCardStyle}" Margin="12,0,0,0">
+                <Border Grid.Column="3" Style="{StaticResource StatCardStyle}" Margin="10,0,0,0">
                     <StackPanel>
                         <TextBlock Text="RAM / DISPLAY" Style="{StaticResource StatLabelStyle}"/>
-                        <StackPanel Orientation="Horizontal" Margin="0,4,0,0">
+                        <WrapPanel Margin="0,4,0,0">
                             <StackPanel>
                                 <TextBlock Text="{Binding RamInfo}" Style="{StaticResource StatValueStyle}" FontSize="18"/>
                                 <TextBlock Text="RAM" Style="{StaticResource StatDetailStyle}"/>
                             </StackPanel>
-                            <TextBlock Text="|" Style="{StaticResource StatDetailStyle}" VerticalAlignment="Center" Margin="16,0"/>
+                            <TextBlock Text="|" Style="{StaticResource StatDetailStyle}" VerticalAlignment="Center" Margin="12,0"/>
                             <StackPanel>
                                 <TextBlock Text="{Binding DisplayInfo}" Style="{StaticResource StatValueStyle}" FontSize="14"/>
                                 <TextBlock Text="Display" Style="{StaticResource StatDetailStyle}"/>
                             </StackPanel>
-                        </StackPanel>
+                        </WrapPanel>
                     </StackPanel>
                 </Border>
             </Grid>
@@ -170,17 +170,17 @@
             <Border Style="{StaticResource CardStyle}">
                 <StackPanel>
                     <TextBlock Text="QUICK ACTIONS" Style="{StaticResource SectionHeaderStyle}"/>
-                    <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+                    <WrapPanel Orientation="Horizontal" Margin="0,12,0,0">
                         <Button Content="Graphics Settings" Command="{Binding NavigateToSettingsCommand}"
-                                Style="{StaticResource SecondaryButtonStyle}" Margin="0,0,12,0" MinWidth="160"/>
+                                Style="{StaticResource SecondaryButtonStyle}" Margin="0,0,10,0" MinWidth="140"/>
                         <Button Content="{Binding RayTracingToggleText}" Command="{Binding ToggleRayTracingCommand}"
-                                Style="{StaticResource SecondaryButtonStyle}" Margin="0,0,12,0" MinWidth="140"
+                                Style="{StaticResource SecondaryButtonStyle}" Margin="0,0,10,0" MinWidth="120"
                                 ToolTip="Click to toggle Ray Tracing between OFF (Non-RT faster lighting) and ON (Ray Tracing)"/>
                         <Button Content="Controller Settings" Command="{Binding NavigateToControllerCommand}"
-                                Style="{StaticResource SecondaryButtonStyle}" Margin="0,0,12,0" MinWidth="160"/>
+                                Style="{StaticResource SecondaryButtonStyle}" Margin="0,0,10,0" MinWidth="140"/>
                         <Button Content="Installation" Command="{Binding NavigateToInstallationCommand}"
-                                Style="{StaticResource SecondaryButtonStyle}" MinWidth="140"/>
-                    </StackPanel>
+                                Style="{StaticResource SecondaryButtonStyle}" MinWidth="120"/>
+                    </WrapPanel>
                 </StackPanel>
             </Border>
         </StackPanel>

@@ -35,7 +35,7 @@
                         <ComboBox Grid.Row="0" Grid.Column="1"
                                   ItemsSource="{Binding ResolutionLabels}"
                                   SelectedIndex="{Binding ResolutionIndex}"
-                                  Style="{StaticResource ModernComboBoxStyle}" Width="300"/>
+                                  Style="{StaticResource ModernComboBoxStyle}"/>
 
                         <CheckBox Grid.Row="1" Grid.Column="1" Content="Start in fullscreen"
                                    IsChecked="{Binding Fullscreen}"
@@ -61,7 +61,7 @@
                                   ItemsSource="{Binding GpuLabels}"
                                   SelectedIndex="{Binding GpuIndex}"
                                   IsEnabled="{Binding HasGpuChoice}"
-                                  Style="{StaticResource ModernComboBoxStyle}" Width="400"/>
+                                  Style="{StaticResource ModernComboBoxStyle}"/>
                     </Grid>
                     <TextBlock Text="{Binding GpuNote}" Style="{StaticResource MutedTextStyle}" Margin="0,6,0,0" TextWrapping="Wrap"/>
 
@@ -89,7 +89,7 @@
                                   ItemsSource="{Binding FpsLabels}"
                                   SelectedIndex="{Binding FpsIndex}"
                                   IsEnabled="{Binding IsFpsLimitEnabled}"
-                                  Style="{StaticResource ModernComboBoxStyle}" Width="400"/>
+                                  Style="{StaticResource ModernComboBoxStyle}"/>
                     </Grid>
 
                     <TextBlock Style="{StaticResource MutedTextStyle}" Margin="0,8,0,0" TextWrapping="Wrap" Text="{Binding FpsLimitNote}"/>
@@ -114,7 +114,7 @@
                         <ComboBox Grid.Column="1"
                                   ItemsSource="{Binding RayTracingLabels}"
                                   SelectedIndex="{Binding RayTracingIndex}"
-                                  Style="{StaticResource ModernComboBoxStyle}" Width="400"/>
+                                  Style="{StaticResource ModernComboBoxStyle}"/>
                     </Grid>
                     <TextBlock Text="{Binding RayTracingNote}" Style="{StaticResource MutedTextStyle}" Margin="0,0,0,12" TextWrapping="Wrap"/>
 
@@ -129,7 +129,7 @@
                         <ComboBox Grid.Column="1"
                                   ItemsSource="{Binding UpscaleLabels}"
                                   SelectedIndex="{Binding UpscaleIndex}"
-                                  Style="{StaticResource ModernComboBoxStyle}" Width="400"
+                                  Style="{StaticResource ModernComboBoxStyle}"
                                   IsEnabled="{Binding SupportsDlss}"/>
                     </Grid>
 
@@ -144,7 +144,7 @@
                         <ComboBox Grid.Column="1"
                                   ItemsSource="{Binding FrameGenLabels}"
                                   SelectedIndex="{Binding FrameGenIndex}"
-                                  Style="{StaticResource ModernComboBoxStyle}" Width="400"
+                                  Style="{StaticResource ModernComboBoxStyle}"
                                   IsEnabled="{Binding IsFrameGenAvailable}"/>
                     </Grid>
 
@@ -159,7 +159,7 @@
                         <ComboBox Grid.Column="1"
                                   ItemsSource="{Binding FrameGenTargetLabels}"
                                   SelectedIndex="{Binding FrameGenTargetIndex}"
-                                  Style="{StaticResource ModernComboBoxStyle}" Width="400"/>
+                                  Style="{StaticResource ModernComboBoxStyle}"/>
                     </Grid>
 
                     <!-- Frame Gen Note -->
@@ -187,7 +187,7 @@
                         <ComboBox Grid.Column="1"
                                   ItemsSource="{Binding OverlayLabels}"
                                   SelectedIndex="{Binding OverlayIndex}"
-                                  Style="{StaticResource ModernComboBoxStyle}" Width="400"/>
+                                  Style="{StaticResource ModernComboBoxStyle}"/>
                     </Grid>
 
                     <TextBlock Style="{StaticResource MutedTextStyle}" Margin="0,8,0,0">

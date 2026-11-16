@@ -8,9 +8,9 @@
         xmlns:vm="clr-namespace:AstroHybrid.App.ViewModels"
         xmlns:models="clr-namespace:AstroHybrid.App.Models"
         mc:Ignorable="d"
-        Title="AstroHybrid" Height="720" Width="1100"
+        Title="AstroHybrid" Height="620" Width="1000"
         WindowStartupLocation="CenterScreen"
-        MinHeight="600" MinWidth="900"
+        MinHeight="360" MinWidth="780"
         Style="{StaticResource MainWindowStyle}"
         Icon="/Resources/astrohybrid.ico">
 
@@ -30,7 +30,7 @@
         <!-- Sidebar -->
         <Border Grid.Column="0" Background="{StaticResource SurfaceBrush}"
                 BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,0,1,0"
-                Width="240">
+                Width="220">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -39,21 +39,21 @@
                 </Grid.RowDefinitions>
 
                 <!-- Logo -->
-                <Border Grid.Row="0" Padding="20,20,20,10" BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0" Padding="16,16,16,10" BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,0,0,1">
                     <StackPanel Orientation="Horizontal">
                         <Border Width="40" Height="40" CornerRadius="8" Background="{StaticResource PrimaryBrush}">
                             <TextBlock Text="★" FontSize="24" Foreground="White"
                                        HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                         <StackPanel Margin="12,0,0,0" VerticalAlignment="Center">
-                            <TextBlock Text="AstroHybrid" FontSize="18" FontWeight="Bold" Foreground="{StaticResource TextPrimaryBrush}"/>
+                            <TextBlock Text="AstroHybrid" FontSize="16" FontWeight="Bold" Foreground="{StaticResource TextPrimaryBrush}"/>
                             <TextBlock Text="Astro Bot PC Port" FontSize="11" Foreground="{StaticResource TextMutedBrush}"/>
                         </StackPanel>
                     </StackPanel>
                 </Border>
 
                 <!-- Navigation -->
-                <StackPanel Grid.Row="1" Margin="10,20,10,0">
+                <StackPanel Grid.Row="1" Margin="8,16,8,0">
                     <RadioButton Style="{StaticResource NavButtonStyle}"
                                  IsChecked="{Binding CurrentPage, Converter={StaticResource EnumToBoolConverter}, ConverterParameter=Home}"
                                  Command="{Binding NavigateCommand}" CommandParameter="Home">
@@ -115,7 +115,7 @@
                 </StackPanel>
 
                 <!-- Status Bar -->
-                <Border Grid.Row="2" Padding="20" BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,1,0,0">
+                <Border Grid.Row="2" Padding="16" BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,1,0,0">
                     <StackPanel>
                         <TextBlock Text="STATUS" Style="{StaticResource MutedTextStyle}" Margin="0,0,0,4"/>
                         <TextBlock Text="{Binding StatusMessage}" Style="{StaticResource BodyTextStyle}" TextWrapping="Wrap"/>
@@ -138,10 +138,10 @@
 
                 <!-- Page Content -->
                 <ContentControl Grid.Row="0" Content="{Binding CurrentPage, Converter={StaticResource PageTemplateSelector}}"
-                                Margin="30,30,30,0"/>
+                                Margin="24,24,24,0"/>
 
                 <!-- Update Notification Banner -->
-                <Border Grid.Row="0" VerticalAlignment="Top" Margin="30,30,30,0"
+                <Border Grid.Row="0" VerticalAlignment="Top" Margin="24,24,24,0"
                         Visibility="{Binding ShowUpdateNotification, Converter={StaticResource BooleanToVisibilityConverter}}"
                         Background="{StaticResource PrimaryBrush}" CornerRadius="8" Padding="20"
                         BorderBrush="{StaticResource AccentBrush}" BorderThickness="1">
@@ -177,7 +177,7 @@
                 </Border>
 
                 <!-- Bottom Action Bar -->
-                <Border Grid.Row="1" Padding="30,20" BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,1,0,0">
+                <Border Grid.Row="1" Padding="24,16" BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,1,0,0">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -193,13 +193,13 @@
                         <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
                             <!-- Update button shown when update is available and not downloading/installing -->
                             <Button Content="Update" Command="{Binding DownloadUpdateCommand}"
-                                    Style="{StaticResource PrimaryButtonStyle}" MinWidth="120" MinHeight="48"
-                                    FontSize="16" FontWeight="SemiBold" Margin="0,0,10,0"
+                                    Style="{StaticResource PrimaryButtonStyle}" MinWidth="120" MinHeight="44"
+                                    FontSize="15" FontWeight="SemiBold" Margin="0,0,10,0"
                                     Visibility="{Binding UpdateState.UpdateAvailable, Converter={StaticResource BooleanToVisibilityConverter}}"
                                     IsEnabled="{Binding UpdateState.UpdateAvailable, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                             <Button Content="Play" Command="{Binding LaunchGameCommand}"
-                                    Style="{StaticResource PrimaryButtonStyle}" MinWidth="140" MinHeight="48"
-                                    FontSize="16" FontWeight="SemiBold"
+                                    Style="{StaticResource PrimaryButtonStyle}" MinWidth="140" MinHeight="44"
+                                    FontSize="15" FontWeight="SemiBold"
                                     IsEnabled="{Binding InstallationState.IsInstalled}"/>
                         </StackPanel>
                     </Grid>

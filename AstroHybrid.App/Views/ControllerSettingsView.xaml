@@ -31,7 +31,7 @@
                         <ComboBox Grid.Column="1"
                                   ItemsSource="{Binding ControllerLabels}"
                                   SelectedIndex="{Binding ControllerIndex}"
-                                  Style="{StaticResource ModernComboBoxStyle}" Width="400"/>
+                                  Style="{StaticResource ModernComboBoxStyle}"/>
                     </Grid>
 
                     <TextBlock Style="{StaticResource MutedTextStyle}" Margin="0,8,0,0" TextWrapping="Wrap">
@@ -55,7 +55,7 @@
                         <StackPanel Grid.Column="1" Orientation="Horizontal">
                             <ComboBox ItemsSource="{Binding RumbleLabels}"
                                       SelectedIndex="{Binding RumbleIndex}"
-                                      Style="{StaticResource ModernComboBoxStyle}" Width="300"/>
+                                      Style="{StaticResource ModernComboBoxStyle}"/>
                             <TextBox Text="{Binding RumbleCustomPercent, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"
                                      IsEnabled="{Binding IsCustomRumble}"
                                      Style="{StaticResource ModernTextBoxStyle}"

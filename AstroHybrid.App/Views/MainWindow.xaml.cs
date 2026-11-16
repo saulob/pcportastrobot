@@ -12,9 +12,17 @@ namespace AstroHybrid.App.Views
         public MainWindow()
         {
             InitializeComponent();
+            ClampToWorkArea();
             var version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
             if (version != null)
                 Title = $"AstroHybrid v{version.Major}.{version.Minor}.{version.Build}";
+        }
+
+        private void ClampToWorkArea()
+        {
+            var work = SystemParameters.WorkArea; // DIPs, like Window.Width and Window.Height.
+            Width = Math.Min(Width, work.Width - 48);
+            Height = Math.Min(Height, work.Height * 0.8);
         }
     }
 
